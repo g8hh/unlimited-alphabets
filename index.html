@@ -4,15 +4,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
 
-    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="vue.js"></script>
     <script src="js/ExpantaNum.js"></script>
     <script src="js/saves.js"></script>
     <script src="js/main.js"></script>
     <script src="js/v.js"></script>
 
-    <title>Unlimited Alphabets Beta</title>
+    <title>无尽的字母 - Unlimited Alphabets Beta</title>
 </head>
 <body onload="loadGame()">
+   <script src="chs.js?07071443"></script>
+<script src="//likexia.gitee.io/game/zh/core.js"></script>
     <div id="app">
         <div class="table_inline" style="margin-bottom: 10px;">
             <div class="tab" v-for="x in TABS.tab.name.length" v-if="TABS.tab.unl[x-1]()" v-on:click="player.tab = x">
@@ -78,5 +80,10 @@
             </div>
         </div>
     </div>
+    <!--客服 开始-->
+<script src="//likexia.gitee.io/game/js/jquery.min.js"></script>
+<link rel="stylesheet" href="//likexia.gitee.io/game/css/kf.css" type="text/css" media="screen" charset="utf-8">
+<script src="//likexia.gitee.io/game/js/kf.js"></script>
+<!-- 客服 结束 -->
 </body>
 </html>
