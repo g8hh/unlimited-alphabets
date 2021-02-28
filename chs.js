@@ -59,21 +59,15 @@ var cnItems = {
     '': '',
     '': '',
     '': '',
-    'Multiply a production based on unspent b.': '根据未使用的b，乘以a的产量。',
-    'Multiply a production based on unspent a.': '根据未使用的a乘以a的产量。',
-    'Gain more a & b based on unspent c.': '基于未使用的c获得更多的a和b。',
-    'Gain 3x more a & b.': '增加3倍的a和b。',
     ' You have': ' 你有',
     '当前: None-None': '当前: 无-无',
     '当前: None-a': '当前: 无-a',
-    'Gain more b based on unspent a.': '基于未使用的a获得更多的b。',
     'Make the next alphabet is bought automatically.': '下一个字母是自动买的。',
     'Make the next alphabet is automatically gain 10%.': '下一个字母会自动增长10%。',
     'Start to generate a.': '开始产生a。',
     'Square a production.': '平方生产。',
     'Raise a production by 1.2.': '将产量提高1.2。',
     'Raise b gain by 1.1.': '使b的收益增加1.1。',
-    'Gain 2x more b.': '增加x2的b。',
 
     //原样
     '': '',
@@ -116,6 +110,23 @@ var cnPrefix = {
     "Currently: ": "当前: ",
     "You have played for ": "你已经玩了 ",
     "Cost: ": "成本: ",
+    "Version: ": "版本: ",
+    "None-": "无-",
+    "": "",
+    "": "",
+    "": "",
+    "": "",
+    "": "",
+    "": "",
+    "": "",
+    "": "",
+    "": "",
+    "": "",
+    "": "",
+    "": "",
+    "": "",
+    "": "",
+    "": "",
     "": "",
     "": "",
     "": "",
@@ -153,8 +164,7 @@ var cnPostfix = {
     "  ": "",
     " ": "",
     "\n": "",
-    "": "",
-    "": "",
+    " seconds": " 秒",
     "": "",
     "": "",
     "": "",
@@ -169,8 +179,6 @@ var cnPostfix = {
 var cnExcludeWhole = [
     /^x?\d+(\.\d+)?[A-Za-z%]{0,2}(\s.C)?\s*$/, //12.34K,23.4 °C
     /^x?\d+(\.\d+)?(e[+\-]?\d+)?\s*$/, //12.34e+4
-    /^a-([\d\.,]+)$/, //纯空格
-    /^b-([\d\.,]+)$/, //纯空格
     /^([\d\.,]+)$/, //纯空格
     /^\s*$/, //纯空格
     /^\d+(\.\d+)?[A-Za-z]{0,2}.?\(?([+\-]?(\d+(\.\d+)?[A-Za-z]{0,2})?)?$/, //12.34M (+34.34K
@@ -189,10 +197,18 @@ var cnExcludePostfix = [
 //小数点：([\d\.]+)
 //原样输出的字段：(.+)
 var cnRegReplace = new Map([
-    [/^requires ([\d\.]+) more research points$/, '需要$1个研究点'],
+    [/^(.+)-([\d\.,]+)$/, '$1-$2'],
     [/^Multiply (.+) production by (.+).$/, '$1 的产量 x$2'],
-    [/^Cost: (\d+) RP$/, '成本：$1 皇家点数'],
-    [/^Usages: (\d+)\/$/, '用途：$1\/'],
+    [/^Raise (.+) \& (.+) gain by (.+).$/, '提高 $1 和 $2 的收益 $3倍。'],
+    [/^Gain (.+)x more (.+) \& (.+).$/, '获得 $1倍 的 $2 和 $3 。'],
+    [/^Gain (.+)x more (.+).$/, '获得 $1倍 的 $2。'],
+    [/^Gain (.+)x (.+).$/, '获得 $1倍 的 $2。'],
+    [/^Gain more alphabets except (.+) based on unspent (.+).$/, '获得更多的字母，除了 $1 ，基于未使用的 $2。'],
+    [/^Gain more previous alphabets based on unspent (.+).$/, '获得更多的前一个字母基于未使用的 $2。'],
+    [/^Gain more (.+) \& (.+) alphabets based on unspent (.+).$/, '获得更多的 $1 和 $2 字母基于未使用的 $3。'],
+    [/^Gain more (.+) based on unspent (.+).$/, '获得更多的 $1 基于未使用的 $2。'],
+    [/^Gain more (.+) \& (.+) based on unspent (.+).$/, '获得更多的 $1 和 $2 基于未使用的 $3。'],
+    [/^Multiply (.+) production based on unspent (.+).$/, '倍增 $1 的产量基于未使用的 $2'],
     [/^workers: (\d+)\/$/, '工人：$1\/'],
 
 ]);
