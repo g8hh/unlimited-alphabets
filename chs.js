@@ -58,7 +58,7 @@ var cnItems = {
     '': '',
     '': '',
     '': '',
-    '': '',
+    'Raise a upgrade 5 and b upgrade 2 effects by 1.15.': '提升 a 的第5个升级的效果和 b 的第2个升级的效果 1.15。',
     ' You have': ' 你有',
     '当前: None-None': '当前: 无-无',
     '当前: None-a': '当前: 无-a',
@@ -209,6 +209,7 @@ var cnRegReplace = new Map([
     [/^Gain more (.+) based on unspent (.+).$/, '获得更多的 $1 基于未使用的 $2。'],
     [/^Gain more (.+) \& (.+) based on unspent (.+).$/, '获得更多的 $1 和 $2 基于未使用的 $3。'],
     [/^Multiply (.+) production based on unspent (.+).$/, '倍增 $1 的产量基于未使用的 $2'],
+    [/^当前: ([\d\.,]+)$/, '当前：$1'],
     [/^workers: (\d+)\/$/, '工人：$1\/'],
 
 ]);
